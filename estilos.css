@@ -1,0 +1,59 @@
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #3498db; /* Blue */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .loader::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f3f3f3; /* Light grey */
+    animation: movePoint 2s infinite linear;
+  }
+  
+  .streak {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(243, 243, 243, 0.5); /* Semi-transparent grey */
+    animation: fadeOut 1.5s linear forwards;
+  }
+  
+  @keyframes movePoint {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: calc(100% - 10px);
+    }
+    50% {
+      top: calc(100% - 10px);
+      left: calc(100% - 10px);
+    }
+    75% {
+      top: calc(100% - 10px);
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.2); /* Reducir tamaño */
+    }
+  }

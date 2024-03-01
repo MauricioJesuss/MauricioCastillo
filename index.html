@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurante delicioso</title>
+<style>
+/* Estilos CSS aquí */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.navbar {
+  background-color: #000;
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 1.1em;
+}
+
+.contactos-container {
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.contactos-container p {
+  margin: 0;
+}
+
+.restaurante-background {
+  /* Coloca la ruta de la imagen de fondo a continuación */
+  background-image: url('pizza.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.btn {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  width: 2px; /* Grosor de la línea */
+  height: 2px; /* Longitud de la línea */
+  background-color: #f3f3f3; /* Color de la línea */
+  animation: moveLine 2s infinite linear;
+}
+
+@keyframes moveLine {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 2px);
+  }
+  50% {
+    top: calc(100% - 2px);
+    left: calc(100% - 2px);
+  }
+  75% {
+    top: calc(100% - 2px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px; /* Tamaño del punto */
+  height: 5px; /* Tamaño del punto */
+  border-radius: 50%;
+  background-color: #f3f3f3; /* Color del punto */
+  animation: movePoint 2s infinite linear;
+}
+
+@keyframes movePoint {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.2); /* Escala del punto */
+  }
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  animation-play-state: paused;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#restaurante">Restaurante</a>
+  <a href="#publicidad">Publicidad</a>
+  <a href="#contactos">Contactos</a>
+</div>
+
+<div class="container">
+  <div id="restaurante" class="section restaurante-background">
+    <h2>Restaurante delicioso</h2>
+    <p>¡Bienvenido a nuestro restaurante! Descubre nuestra deliciosa selección de platos y bebidas.</p>
+    <a href="#" class="btn">¡Haz tu reserva ahora!</a>
+  </div>
+
+  <div id="publicidad" class="section">
+    <h2>Publicidad</h2>
+    <p>Información de publicidad aquí...</p>
+  </div>
+</div>
+
+<div id="contactos" class="contactos-container section">
+  <h2>Contactos</h2>
+  <p>Información de contacto aquí...</p>
+</div>
+
+</body>
+</html>
